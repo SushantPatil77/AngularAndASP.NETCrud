@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <form (ngSubmit)="onSubmit(studentForm)" #studentForm="ngForm">
+        <div class="mt-2 pt-2">
+          <label for="Name">Name :</label>
+          <input type="text" id="name" name="name" ngModel />
+          <label for="Name">Age :</label>
+          <input type="text" id="Age" name="age" ngModel />
+        </div>
+        <div class="mt-2 pt-2">
+          <label for="Name">Email :</label>
+          <input type="text" id="Email" name="email" ngModel />
+          <label for="Name">Phone :</label>
+          <input type="text" id="phone" name="phone" ngModel />
+        </div>
+        <div class="mt-2 pt-2">
+          <label for="Name">City :</label>
+          <input type="text" id="city" name="city" ngModel />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">phone</th>
+        <th scope="col">city</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let i = index">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+        <td>{{ item.city }}</td>
+        <td>
+          <button (click)="deleteStudent(item.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
